@@ -141,7 +141,10 @@ admin:
     # Ingress hostname
     hostname:
     # Map of ingress annotations.
-    annotations: {}
+    annotations: {
+      service.beta.kubernetes.io/aws-load-balancer-type: "external"
+      service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: "ip"
+    }
     # Ingress path.
     path: /
 
